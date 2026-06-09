@@ -96,10 +96,10 @@
 Start with:
 
 ```text
-themes/deep-sea-cyan.css
+themes/midnight-sapphire.css
 ```
 
-Deep Sea Cyan is the reference theme for ChatPotion and gives the best first impression of the collection.
+Midnight Sapphire is the reference theme for ChatPotion and gives the best first impression of the collection.
 
 ## Folder Structure
 
