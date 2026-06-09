@@ -45,43 +45,42 @@
 
 </details>
 
-
 ## Themes Included
 
-- Arctic Aurora
-- Ayu Mirage
-- Catppuccin Mocha
-- Crimson Noir
-- Cyberpunk Neon
-- Deep Sea Cyan
-- Dracula Soft
-- Everforest Dark
-- Forest Night
-- GitHub Dark
-- Gruvbox Material
-- Kanagawa Wave
-- Matrix Terminal
-- Midnight Sapphire
-- Monokai Pro
-- Nord Frost
-- One Dark Pro
-- Rosé Pine Moon
-- Solarized Night
-- Synthwave Sunset
-- Tokyo Night
+* Arctic Aurora
+* Ayu Mirage
+* Catppuccin Mocha
+* Crimson Noir
+* Cyberpunk Neon
+* Deep Sea Cyan
+* Dracula Soft
+* Everforest Dark
+* Forest Night
+* GitHub Dark
+* Gruvbox Material
+* Kanagawa Wave
+* Matrix Terminal
+* Midnight Sapphire
+* Monokai Pro
+* Nord Frost
+* One Dark Pro
+* Rosé Pine Moon
+* Solarized Night
+* Synthwave Sunset
+* Tokyo Night
 
 ## Features
 
-- 21 custom themes for The Lounge
-- Clean dark interface styling
-- Halloy-inspired sidebar appearance
-- Improved unread message dots
-- Separate mention/ping indicators
-- Themed recent mentions panel
-- Improved context menu readability
-- Fixed private message highlight behavior
-- Better image preview overlay styling
-- Responsive layout adjustments
+* 21 custom themes for The Lounge
+* Clean dark interface styling
+* Halloy-inspired sidebar appearance
+* Improved unread message dots
+* Separate mention/ping indicators
+* Themed recent mentions panel
+* Improved context menu readability
+* Fixed private message highlight behavior
+* Better image preview overlay styling
+* Responsive layout adjustments
 
 ## Installation
 
@@ -94,4 +93,34 @@
 
 ## Recommended Theme
 
-No recommendation, lol.
+Start with:
+
+```text
+themes/deep-sea-cyan.css
+```
+
+Deep Sea Cyan is the reference theme for ChatPotion and gives the best first impression of the collection.
+
+## Folder Structure
+
+```text
+ChatPotion
+├── themes
+├── screenshots
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+└── .gitignore
+```
+
+## Notes
+
+These themes are designed for The Lounge’s custom stylesheet feature. They are not official The Lounge themes or plugins.
+
+## Author
+
+Made by **ggvolta**.
+
+## License
+
+This project is licensed under the MIT License.
