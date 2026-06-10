@@ -86,20 +86,17 @@
 
 1. Open The Lounge.
 2. Go to **Settings**.
-3. Open **Custom Stylesheet**.
-4. Copy the CSS from any file inside the `themes` folder.
-5. Paste it into the custom stylesheet box.
-6. Save and refresh The Lounge.
+3. Set the base theme to **Morning** for the best result.
+4. Open **Custom Stylesheet**.
+5. Copy the CSS from any file inside the `themes` folder.
+6. Paste it into the custom stylesheet box.
+7. Save and refresh The Lounge.
 
-## Recommended Theme
+## Recommended Base Theme
 
-Start with:
+ChatPotion works best when applied over The Lounge's **Morning** theme.
 
-```text
-themes/deep-sea-cyan.css
-```
-
-Deep Sea Cyan is the reference theme for ChatPotion and gives the best first impression of the collection.
+AMOLED-based setups may also work well, but AMOLED is not a default The Lounge theme.
 
 ## Folder Structure
 
