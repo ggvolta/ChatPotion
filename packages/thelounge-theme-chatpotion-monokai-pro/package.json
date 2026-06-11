@@ -1,0 +1,36 @@
+{
+  "name": "thelounge-theme-chatpotion-monokai-pro",
+  "version": "1.0.0",
+  "description": "Monokai Pro theme from ChatPotion for The Lounge IRC client.",
+  "main": "package.json",
+  "keywords": [
+    "thelounge",
+    "thelounge-theme",
+    "irc",
+    "theme",
+    "css",
+    "dark-theme",
+    "chatpotion"
+  ],
+  "thelounge": {
+    "css": "theme.css",
+    "name": "ChatPotion Monokai Pro",
+    "type": "theme"
+  },
+  "homepage": "https://github.com/ggvolta/ChatPotion#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggvolta/ChatPotion.git",
+    "directory": "packages/thelounge-theme-chatpotion-monokai-pro"
+  },
+  "bugs": {
+    "url": "https://github.com/ggvolta/ChatPotion/issues"
+  },
+  "author": "ggvolta",
+  "license": "MIT",
+  "files": [
+    "theme.css",
+    "README.md",
+    "LICENSE"
+  ]
+}

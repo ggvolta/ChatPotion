@@ -1,0 +1,21 @@
+{
+  "name": "chatpotion",
+  "version": "1.0.1",
+  "private": true,
+  "description": "A stylish theme collection for The Lounge IRC client.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "generate:packages": "node scripts/generate-packages.js"
+  },
+  "keywords": [
+    "thelounge",
+    "irc",
+    "theme",
+    "css",
+    "dark-theme"
+  ],
+  "author": "ggvolta",
+  "license": "MIT"
+}

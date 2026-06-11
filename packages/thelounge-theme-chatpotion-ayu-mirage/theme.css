@@ -1,0 +1,1283 @@
+/* =========================================================
+Ayu Mirage Theme for The Lounge
+By ggvolta
+========================================================= */
+
+:root {
+	
+	--sea-page-bg: #0b0e14;
+	--sea-window: #151a24;
+	--sea-panel: #1f2633;
+	--sea-panel-2: #242d3d;
+	--sea-sidebar: #111722;
+	--sea-sidebar-dark: #0b0f17;
+	--sea-chat: #0f141d;
+	--sea-input: #1c2430;
+
+	
+	--sea-border: #33415a;
+	--sea-border-soft: #263249;
+
+	
+	--sea-text: #d9d7ce;
+	--sea-text-strong: #fff8e6;
+	--sea-text-bright: #ffffff;
+
+	--sea-muted: #a6b2c0;
+	--sea-dim: #707a8c;
+
+	
+	--sea-accent: #ffcc66;
+	--sea-cyan: #5ccfe6;
+	--sea-blue: #73d0ff;
+	--sea-green: #bae67e;
+	--sea-red: #f28779;
+	--sea-yellow: #ffd580;
+	--sea-orange: #ffad66;
+	--sea-purple: #d4bfff;
+	--sea-magenta: #f29e74;
+
+	
+	--sea-unread-dot: #ffcc66;
+	--sea-mention-dot: #5ccfe6;
+	--sea-ping-dot: #5ccfe6;
+	--sea-ping-glow: rgba(0, 0, 0, 0);
+	--sea-ping-ring: rgba(0, 0, 0, 0);
+
+	--sea-hover-bg: rgba(255, 204, 102, 0.10);
+	--sea-msg-hover-bg: rgba(255, 204, 102, 0.05);
+
+	--sea-active-bg: #1f2633;
+	--sea-header-bg: #151a24;
+
+	--sea-mention-bg: rgba(255, 213, 128, 0.16);
+	--sea-mention-text: #fff0c2;
+
+	--sea-focus-outline: rgba(255, 204, 102, 0.65);
+
+	
+	--sea-font:
+		"Consolas",
+		"Cascadia Mono", "Cascadia Code",
+		"JetBrains Mono",
+		"Segoe UI Mono",
+		ui-monospace, monospace;
+}
+
+
+html,
+body {
+	height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	background:
+		radial-gradient(
+			circle at 20% 0%,
+			rgba(255, 204, 102, 0.17),
+			transparent 32%
+		),
+		radial-gradient(
+			circle at 85% 100%,
+			rgba(115, 208, 255, 0.12),
+			transparent 36%
+		),
+		var(--sea-page-bg) !important;
+
+	color: var(--sea-text) !important;
+	font-family: var(--sea-font) !important;
+
+	
+	font-size: 13.5px !important;
+	line-height: 1.38 !important;
+
+	text-rendering: geometricPrecision;
+	overflow: hidden !important;
+}
+
+#app,
+#loading {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#viewport {
+	position: fixed !important;
+
+	
+	inset: 0 !important;
+
+	width: auto !important;
+	height: auto !important;
+
+	max-width: none !important;
+	max-height: none !important;
+
+	background: var(--sea-window) !important;
+
+	
+	border-radius: 0 !important;
+
+	overflow: hidden !important;
+
+	box-shadow:
+		0 22px 70px rgba(0, 0, 0, 0.7),
+		0 0 24px rgba(38, 198, 218, 0.055),
+		0 0 0 1px rgba(255, 255, 255, 0.025) inset !important;
+}
+
+#windows,
+#chat,
+#chat-container {
+	background: var(--sea-chat) !important;
+	color: var(--sea-text) !important;
+}
+
+
+#sidebar {
+	width: 220px !important;
+	min-width: 175px !important;
+	max-width: 360px !important;
+
+	resize: horizontal !important;
+	overflow: auto !important;
+
+	background: linear-gradient(
+		180deg,
+		var(--sea-sidebar) 0%,
+		var(--sea-sidebar-dark) 100%
+	) !important;
+
+	color: var(--sea-muted) !important;
+}
+
+
+#sidebar::before {
+	content: "";
+	display: block !important;
+
+	width: 18px !important;
+	height: 18px !important;
+	min-width: 18px !important;
+	min-height: 18px !important;
+
+	margin: 13px 0 14px 14px !important;
+
+	border-radius: 999px !important;
+
+	background:
+		
+		radial-gradient(circle at 30% 30%,
+			rgba(217, 215, 206, 0.16),
+			rgba(17, 23, 34, 0.00) 60%
+		),
+		
+		radial-gradient(circle,
+			rgba(255, 204, 102, 0.35) 0 34%,
+			rgba(255, 204, 102, 0.00) 35% 100%
+		),
+		
+		radial-gradient(circle,
+			rgba(51, 65, 90, 0.00) 0 62%,
+			rgba(51, 65, 90, 0.65) 63% 66%,
+			rgba(51, 65, 90, 0.00) 67% 100%
+		),
+		
+		conic-gradient(
+			from 0deg,
+			rgba(255, 204, 102, 0.00),
+			rgba(255, 204, 102, 0.55),
+			rgba(115, 208, 255, 0.25),
+			rgba(255, 204, 102, 0.00)
+		);
+
+	position: relative !important;
+	z-index: 20 !important;
+
+	box-shadow:
+		0 0 0 1px rgba(51, 65, 90, 0.55) inset,
+		0 0 14px rgba(255, 204, 102, 0.10);
+
+	opacity: 0.95;
+
+	animation: seaDial 4.8s linear infinite;
+	will-change: transform, filter, opacity;
+
+	filter: saturate(1.05) brightness(1.03);
+}
+
+@keyframes seaDial {
+	0%   { transform: rotate(0deg);   opacity: 0.90; }
+	50%  { opacity: 1.00; }
+	100% { transform: rotate(360deg); opacity: 0.90; }
+}
+
+#sidebar .logo,
+#sidebar .brand,
+#sidebar .thelounge-logo,
+#sidebar .logo-container,
+#sidebar .sidebar-logo,
+#sidebar .app-logo {
+	display: none !important;
+	visibility: hidden !important;
+
+	height: 0 !important;
+	min-height: 0 !important;
+	max-height: 0 !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: hidden !important;
+}
+
+#sidebar .networks,
+#sidebar .network {
+	margin-top: 0 !important;
+}
+
+
+#sidebar .jump-to-input,
+#sidebar input,
+#sidebar .input {
+	background: var(--sea-page-bg) !important;
+	border: 1px solid var(--sea-border-soft) !important;
+
+	color: var(--sea-text) !important;
+
+	border-radius: 6px !important;
+	font-size: 12px !important;
+	height: 30px !important;
+}
+
+#sidebar input::placeholder {
+	color: var(--sea-dim) !important;
+}
+
+
+#sidebar .network {
+	position: relative !important;
+}
+
+#sidebar .network > .collapse-network,
+#sidebar .network .collapse-network,
+#sidebar .network-name .collapse-network,
+#sidebar .network-name .collapse-network::before,
+#sidebar .network-name .collapse-network::after,
+#sidebar .network-name .collapse-network svg,
+#sidebar .network-name .collapse-network i {
+	display: none !important;
+	visibility: hidden !important;
+
+	width: 0 !important;
+	min-width: 0 !important;
+	max-width: 0 !important;
+
+	height: 0 !important;
+	min-height: 0 !important;
+	max-height: 0 !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	opacity: 0 !important;
+	overflow: hidden !important;
+	pointer-events: none !important;
+}
+
+
+#sidebar .network > .network-name,
+#sidebar .network .network-name {
+	position: relative !important;
+
+	display: flex !important;
+	align-items: center !important;
+
+	height: 29px !important;
+	min-height: 29px !important;
+
+	margin: 1px 8px !important;
+
+	
+	padding: 5px 56px 5px 28px !important;
+
+	width: calc(100% - 16px) !important;
+	max-width: calc(100% - 16px) !important;
+	box-sizing: border-box !important;
+
+	text-align: left !important;
+
+	color: var(--sea-text-strong) !important;
+
+	font-size: 12px !important;
+	line-height: 19px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.01em !important;
+
+	border-radius: 5px !important;
+	background: transparent !important;
+
+	overflow: hidden !important;
+	white-space: nowrap !important;
+
+	transform: none !important;
+}
+
+#sidebar .network > .network-name .name,
+#sidebar .network .network-name .name,
+#sidebar .network > .network-name span,
+#sidebar .network .network-name span {
+	flex: 1 1 auto !important;
+	min-width: 0 !important;
+
+	display: block !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: inherit !important;
+
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+
+	opacity: 1 !important;
+	visibility: visible !important;
+
+	transform: none !important;
+}
+
+#sidebar .network > .network-name::before,
+#sidebar .network .network-name::before {
+	content: none !important;
+	display: none !important;
+}
+
+
+#sidebar .network::before {
+	content: "\1F30F\FE0E" !important; 
+
+	position: absolute !important;
+	left: 18px !important;
+	top: 15px !important;
+	transform: translateY(-50%) !important;
+
+	width: 14px !important;
+	height: 14px !important;
+
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+
+	z-index: 100 !important;
+	pointer-events: none !important;
+
+	color: #ffbd85 !important;
+
+	font-family:
+		"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji",
+		"Segoe UI Symbol", sans-serif !important;
+	font-size: 13px !important;
+	line-height: 14px !important;
+
+	opacity: 1 !important;
+	visibility: visible !important;
+
+	filter: saturate(0.9) brightness(1.05) !important;
+}
+
+
+#sidebar .network.disconnected > .network-name,
+#sidebar .network.disconnected .network-name,
+#sidebar .network.is-disconnected > .network-name,
+#sidebar .network.is-disconnected .network-name,
+#sidebar .network.not-connected > .network-name,
+#sidebar .network.not-connected .network-name,
+#sidebar .network[data-state="disconnected"] > .network-name,
+#sidebar .network[data-state="disconnected"] .network-name,
+#sidebar .network[aria-disabled="true"] > .network-name,
+#sidebar .network[aria-disabled="true"] .network-name {
+	color: var(--sea-red) !important;
+	background: rgba(242, 135, 121, 0.08) !important;
+	box-shadow: inset 0 0 0 1px rgba(242, 135, 121, 0.16) !important;
+}
+
+#sidebar .network.disconnected::before,
+#sidebar .network.is-disconnected::before,
+#sidebar .network.not-connected::before,
+#sidebar .network[data-state="disconnected"]::before,
+#sidebar .network[aria-disabled="true"]::before {
+	color: var(--sea-red) !important;
+	filter: none !important;
+}
+
+
+
+
+#sidebar .network button.add-channel {
+	position: absolute !important;
+	right: 6px !important;
+
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	width: 24px !important;
+	height: 29px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+
+	color: var(--sea-muted) !important;
+	background: transparent !important;
+	border: none !important;
+
+	z-index: 50 !important;
+}
+
+
+#sidebar .network.disconnected button.add-channel,
+#sidebar .network.is-disconnected button.add-channel,
+#sidebar .network.not-connected button.add-channel,
+#sidebar .network[data-state="disconnected"] button.add-channel,
+#sidebar .network[aria-disabled="true"] button.add-channel {
+	right: 30px !important; 
+}
+
+#sidebar .network button.add-channel:hover {
+	color: var(--sea-text) !important;
+}
+
+
+#sidebar .network.disconnected .channel-list-item,
+#sidebar .network.disconnected .chan,
+#sidebar .network.disconnected .query,
+#sidebar .network.is-disconnected .channel-list-item,
+#sidebar .network.is-disconnected .chan,
+#sidebar .network.is-disconnected .query,
+#sidebar .network.not-connected .channel-list-item,
+#sidebar .network.not-connected .chan,
+#sidebar .network.not-connected .query,
+#sidebar .network[data-state="disconnected"] .channel-list-item,
+#sidebar .network[data-state="disconnected"] .chan,
+#sidebar .network[data-state="disconnected"] .query,
+#sidebar .network[aria-disabled="true"] .channel-list-item,
+#sidebar .network[aria-disabled="true"] .chan,
+#sidebar .network[aria-disabled="true"] .query {
+	color: var(--sea-red) !important;
+}
+
+#sidebar .network.disconnected .channel-list-item:hover,
+#sidebar .network.disconnected .chan:hover,
+#sidebar .network.is-disconnected .channel-list-item:hover,
+#sidebar .network.is-disconnected .chan:hover,
+#sidebar .network.not-connected .channel-list-item:hover,
+#sidebar .network.not-connected .chan:hover,
+#sidebar .network[data-state="disconnected"] .channel-list-item:hover,
+#sidebar .network[data-state="disconnected"] .chan:hover,
+#sidebar .network[aria-disabled="true"] .channel-list-item:hover,
+#sidebar .network[aria-disabled="true"] .chan:hover {
+	color: #fad5d0 !important;
+}
+
+
+#sidebar .channel-list-item.lobby .badge,
+#sidebar .chan.lobby .badge {
+	display: none !important;
+}
+
+#sidebar .channel-list-item:not(.lobby),
+#sidebar .chan:not(.lobby),
+#sidebar .query {
+	position: relative !important;
+
+	height: 29px !important;
+	min-height: 29px !important;
+
+	padding: 5px 0 5px 28px !important;
+	margin: 1px 8px !important;
+
+	color: var(--sea-muted) !important;
+	border-radius: 5px !important;
+
+	font-size: 12.5px !important;
+	line-height: 19px !important;
+
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+#sidebar .channel-list-item:not(.lobby):hover,
+#sidebar .chan:not(.lobby):hover,
+#sidebar .query:hover {
+	background: var(--sea-hover-bg) !important;
+	color: var(--sea-text) !important;
+}
+
+#sidebar .channel-list-item.active,
+#sidebar .chan.active,
+#sidebar .query.active {
+	background: var(--sea-active-bg) !important;
+	color: var(--sea-text-bright) !important;
+	box-shadow: none !important;
+}
+
+
+#sidebar .channel-list-item:not(.lobby)::before,
+#sidebar .chan:not(.lobby)::before,
+#sidebar .query::before {
+	content: none !important;
+	display: none !important;
+}
+
+
+#sidebar .channel-list-item:not(.lobby) .icon:not(.close),
+#sidebar .chan:not(.lobby) .icon:not(.close),
+#sidebar .query .icon:not(.close),
+#sidebar .channel-list-item:not(.lobby) .channel-icon,
+#sidebar .channel-list-item:not(.lobby) .network-icon,
+#sidebar .channel-list-item:not(.lobby) .fa,
+#sidebar .channel-list-item:not(.lobby) .fas,
+#sidebar .channel-list-item:not(.lobby) .far {
+	display: none !important;
+	visibility: hidden !important;
+	width: 0 !important;
+	min-width: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#sidebar .channel-list-item:not(.lobby) .name,
+#sidebar .channel-list-item:not(.lobby) .title,
+#sidebar .chan:not(.lobby) .name,
+#sidebar .query .name {
+	max-width: 100% !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+
+	color: inherit !important;
+}
+
+
+#sidebar .channel-list-item:not(.lobby) .badge,
+#sidebar .channel-list-item:not(.lobby) .unread,
+#sidebar .channel-list-item:not(.lobby) .unread-count,
+#sidebar .channel-list-item:not(.lobby) .counter,
+#sidebar .chan:not(.lobby) .badge,
+#sidebar .query .badge {
+	position: absolute !important;
+	left: 13px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	width: 6px !important;
+	height: 6px !important;
+
+	padding: 0 !important;
+	margin: 0 !important;
+
+	border-radius: 999px !important;
+	background: var(--sea-unread-dot) !important;
+
+	font-size: 0 !important;
+	line-height: 0 !important;
+	text-indent: -9999px !important;
+	color: transparent !important;
+	overflow: hidden !important;
+
+	box-shadow: 0 0 8px rgba(255, 204, 102, 0.35) !important;
+	opacity: 1 !important;
+}
+
+
+
+#sidebar .channel-list-item.highlight:not(.lobby),
+#sidebar .channel-list-item.mention:not(.lobby),
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby),
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby),
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight),
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention),
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="highlight"]),
+#sidebar .channel-list-item:not(.lobby):has(.unread.highlight),
+#sidebar .channel-list-item:not(.lobby):has(.counter.highlight),
+#sidebar .chan.highlight:not(.lobby),
+#sidebar .chan.mention:not(.lobby),
+#sidebar .chan:not(.lobby):has(.badge.highlight),
+#sidebar .chan:not(.lobby):has(.badge.mention),
+#sidebar .query.highlight,
+#sidebar .query.mention,
+#sidebar .query:has(.badge.highlight),
+#sidebar .query:has(.badge.mention) {
+	background: var(--sea-mention-bg) !important;
+	color: var(--sea-mention-text) !important;
+	font-weight: 700 !important;
+	box-shadow: inset 2px 0 0 var(--sea-mention-dot) !important;
+}
+
+#sidebar .channel-list-item.highlight:not(.lobby) .name,
+#sidebar .channel-list-item.mention:not(.lobby) .name,
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby) .name,
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="highlight"]) .name,
+#sidebar .channel-list-item:not(.lobby):has(.unread.highlight) .name,
+#sidebar .channel-list-item:not(.lobby):has(.counter.highlight) .name,
+#sidebar .chan.highlight:not(.lobby) .name,
+#sidebar .chan.mention:not(.lobby) .name,
+#sidebar .chan:not(.lobby):has(.badge.highlight) .name,
+#sidebar .chan:not(.lobby):has(.badge.mention) .name,
+#sidebar .query.highlight .name,
+#sidebar .query.mention .name,
+#sidebar .query:has(.badge.highlight) .name,
+#sidebar .query:has(.badge.mention) .name {
+	color: var(--sea-mention-text) !important;
+	font-weight: 700 !important;
+}
+
+#sidebar .channel-list-item.highlight.active:not(.lobby),
+#sidebar .channel-list-item.mention.active:not(.lobby),
+#sidebar .channel-list-item.active:not(.lobby):has(.badge.highlight),
+#sidebar .channel-list-item.active:not(.lobby):has(.badge.mention),
+#sidebar .chan.highlight.active:not(.lobby),
+#sidebar .chan.mention.active:not(.lobby),
+#sidebar .chan.active:not(.lobby):has(.badge.highlight),
+#sidebar .chan.active:not(.lobby):has(.badge.mention),
+#sidebar .query.highlight.active,
+#sidebar .query.mention.active,
+#sidebar .query.active:has(.badge.highlight),
+#sidebar .query.active:has(.badge.mention) {
+	background: var(--sea-mention-bg) !important;
+	color: var(--sea-mention-text) !important;
+	box-shadow:
+		inset 2px 0 0 var(--sea-mention-dot),
+		inset 0 0 0 999px rgba(255, 255, 255, 0.04) !important;
+}
+
+#chat .msg.highlight,
+#chat .msg.mentioned,
+#chat .msg[data-highlight="true"],
+#chat .msg[data-type="highlight"],
+#windows .msg.highlight,
+#windows .msg.mentioned,
+#windows .msg[data-highlight="true"],
+#windows .msg[data-type="highlight"] {
+	background: var(--sea-mention-bg) !important;
+	box-shadow: inset 2px 0 0 var(--sea-mention-dot) !important;
+	text-shadow: none !important;
+}
+
+#chat .msg.highlight .content,
+#chat .msg.mentioned .content,
+#chat .msg[data-highlight="true"] .content,
+#chat .msg[data-type="highlight"] .content,
+#windows .msg.highlight .content,
+#windows .msg.mentioned .content,
+#windows .msg[data-highlight="true"] .content,
+#windows .msg[data-type="highlight"] .content {
+	color: var(--sea-mention-text) !important;
+}
+
+#chat .header,
+#chat-container .header {
+	min-height: 40px !important;
+	height: 40px !important;
+
+	background: var(--sea-header-bg) !important;
+	border-bottom: 1px solid var(--sea-border) !important;
+
+	color: var(--sea-muted) !important;
+
+	font-size: 12px !important;
+	line-height: 40px !important;
+}
+
+#chat .header .title,
+#chat-container .header .title {
+	color: var(--sea-text-bright) !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+}
+
+#chat .header .topic,
+#chat-container .header .topic {
+	color: var(--sea-muted) !important;
+	font-size: 12px !important;
+}
+
+#chat .header a,
+#chat-container .header a {
+	color: #96dcff !important;
+}
+
+#chat .messages,
+.messages {
+	background: var(--sea-chat) !important;
+	color: var(--sea-text) !important;
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+}
+
+#chat .msg {
+	color: var(--sea-text) !important;
+	font-size: 13px !important;
+	line-height: 18px !important;
+	min-height: 18px !important;
+}
+
+#chat .msg:hover {
+	background: var(--sea-msg-hover-bg) !important;
+}
+
+#chat .time {
+	color: var(--sea-dim) !important;
+	font-size: 11.5px !important;
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}
+
+#chat .from {
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+	color: var(--sea-text-strong) !important;
+}
+
+#chat .content {
+	color: var(--sea-text) !important;
+	font-size: 13px !important;
+	line-height: 18px !important;
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}
+
+#chat a {
+	color: #9ddeff !important;
+	text-decoration: none !important;
+}
+
+#chat a:hover {
+	text-decoration: underline !important;
+}
+
+#form {
+	background: var(--sea-header-bg) !important;
+	min-height: 34px !important;
+	padding: 4px 8px !important;
+	display: flex !important;
+	align-items: center !important;
+}
+
+#input,
+#form input,
+#form textarea {
+	background: var(--sea-input) !important;
+	color: var(--sea-text) !important;
+
+	border: 1px solid var(--sea-border-soft) !important;
+	border-radius: 6px !important;
+
+	min-height: 26px !important;
+	height: auto !important;
+
+	font-family: var(--sea-font) !important;
+	font-size: 13px !important;
+	line-height: 19px !important;
+
+	padding: 4px 10px !important;
+	box-sizing: border-box !important;
+}
+
+
+#chat .userlist {
+	width: 165px !important;
+	min-width: 165px !important;
+
+	background: var(--sea-header-bg) !important;
+	color: var(--sea-muted) !important;
+}
+
+#chat .userlist .names .user {
+	font-size: 12.5px !important;
+	line-height: 22px !important;
+	border-radius: 5px !important;
+	padding-left: 7px !important;
+}
+
+#chat .userlist .names .user:hover {
+	background: var(--sea-hover-bg) !important;
+}
+
+
+#mentions-popup,
+#recent-mentions,
+#mentions,
+.mentions-popup,
+.recent-mentions,
+#chat .mentions-popup,
+#chat-container .mentions-popup,
+#windows .mentions-popup {
+	background: var(--sea-header-bg) !important;
+	color: var(--sea-text) !important;
+
+	border: 1px solid var(--sea-border) !important;
+	border-radius: 8px !important;
+
+	box-shadow:
+		0 18px 55px rgba(0, 0, 0, 0.6),
+		0 0 0 1px rgba(38, 198, 218, 0.08) inset,
+		0 0 18px rgba(38, 198, 218, 0.06) !important;
+
+	font-family: var(--sea-font) !important;
+
+	max-height: calc(100vh - 110px) !important;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+}
+
+
+
+
+#viewport {
+	border: 1px solid var(--sea-border) !important;
+}
+
+
+#sidebar,
+#chat,
+#chat-container,
+#windows,
+#chat .userlist {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+
+#sidebar {
+	border-right: 1px solid rgba(51, 65, 90, 0.85) !important; 
+}
+
+#chat .userlist {
+	border-left: 1px solid rgba(51, 65, 90, 0.85) !important; 
+}
+
+
+#chat .header,
+#chat-container .header {
+	border-bottom: 1px solid rgba(51, 65, 90, 0.85) !important;
+}
+
+#form {
+	border-top: 1px solid rgba(51, 65, 90, 0.85) !important;
+}
+
+
+#chat .msg[data-type="action"] {
+	color: rgba(212, 191, 255, 0.82) !important; 
+	font-style: italic !important;
+}
+
+#chat .msg[data-type="action"] .from,
+#chat .msg[data-type="action"] .content,
+#chat .msg[data-type="action"] .user,
+#chat .msg[data-type="action"] a {
+	color: inherit !important;
+	font-style: inherit !important;
+}
+
+#chat .msg[data-type="action"] .toggle-favorite,
+#chat .msg[data-type="action"] .favorite,
+#chat .msg[data-type="action"] .fav,
+#chat .msg[data-type="action"] .icon.favorite,
+#chat .msg[data-type="action"] .icon.star,
+#chat .msg[data-type="action"] svg,
+#chat .msg[data-type="action"] i {
+	color: inherit !important;
+	fill: currentColor !important;
+	stroke: currentColor !important;
+	opacity: 1 !important;
+}
+
+
+
+
+#sidebar .channel-list-item:not(.lobby) .badge.highlight,
+#sidebar .channel-list-item:not(.lobby) .badge.mention,
+#sidebar .channel-list-item:not(.lobby) .badge[data-type="highlight"],
+#sidebar .channel-list-item:not(.lobby)[data-highlight="true"] .badge,
+#sidebar .channel-list-item:not(.lobby).highlight .badge,
+#sidebar .channel-list-item:not(.lobby).mention .badge,
+#sidebar .chan.highlight .badge,
+#sidebar .chan.mention .badge,
+#sidebar .query.highlight .badge,
+#sidebar .query.mention .badge,
+#sidebar .query .badge.highlight,
+#sidebar .query .badge.mention {
+	background: var(--sea-mention-dot) !important;
+	box-shadow: 0 0 10px rgba(255, 213, 128, 0.45) !important;
+}
+
+
+#sidebar .query .badge,
+#sidebar .query .unread,
+#sidebar .query .unread-count,
+#sidebar .query .counter {
+	background: var(--sea-yellow) !important;
+	box-shadow: 0 0 10px rgba(255, 213, 128, 0.35) !important;
+}
+#sidebar .channel-list-item.highlight:not(.lobby) .badge,
+#sidebar .channel-list-item.mention:not(.lobby) .badge,
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="highlight"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="mention"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.unread.highlight) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.unread.mention) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.counter.highlight) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.counter.mention) .badge,
+#sidebar .chan.highlight:not(.lobby) .badge,
+#sidebar .chan.mention:not(.lobby) .badge,
+#sidebar .chan[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .chan[data-mention="true"]:not(.lobby) .badge,
+#sidebar .chan:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .chan:not(.lobby):has(.badge.mention) .badge,
+#sidebar .query.highlight .badge,
+#sidebar .query.mention .badge,
+#sidebar .query[data-highlight="true"] .badge,
+#sidebar .query[data-mention="true"] .badge,
+#sidebar .query:has(.badge.highlight) .badge,
+#sidebar .query:has(.badge.mention) .badge,
+#sidebar .query .badge.highlight,
+#sidebar .query .badge.mention,
+#sidebar .query .badge[data-type="highlight"],
+#sidebar .query .badge[data-type="mention"] {
+	background: var(--sea-ping-dot) !important;
+	box-shadow:
+		0 0 0 2px var(--sea-ping-ring),
+		0 0 12px var(--sea-ping-glow) !important;
+	width: 7px !important;
+	height: 7px !important;
+	min-width: 7px !important;
+	max-width: 7px !important;
+	min-height: 7px !important;
+	max-height: 7px !important;
+}
+
+#sidebar .channel-list-item.highlight:not(.lobby):not(.active),
+#sidebar .channel-list-item.mention:not(.lobby):not(.active),
+#sidebar .channel-list-item.mentioned:not(.lobby):not(.active),
+#sidebar .channel-list-item.notification:not(.lobby):not(.active),
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby):not(.active),
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby):not(.active),
+#sidebar .channel-list-item[data-mentioned="true"]:not(.lobby):not(.active),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.badge.highlight),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.badge.mention),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.badge.mentioned),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.badge[data-type="highlight"]),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.badge[data-type="mention"]),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.unread.highlight),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.unread.mention),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.counter.highlight),
+#sidebar .channel-list-item:not(.lobby):not(.active):has(.counter.mention),
+#sidebar .chan.highlight:not(.lobby):not(.active),
+#sidebar .chan.mention:not(.lobby):not(.active),
+#sidebar .chan.mentioned:not(.lobby):not(.active),
+#sidebar .chan.notification:not(.lobby):not(.active),
+#sidebar .chan[data-highlight="true"]:not(.lobby):not(.active),
+#sidebar .chan[data-mention="true"]:not(.lobby):not(.active),
+#sidebar .chan:not(.lobby):not(.active):has(.badge.highlight),
+#sidebar .chan:not(.lobby):not(.active):has(.badge.mention),
+#sidebar .chan:not(.lobby):not(.active):has(.badge.mentioned),
+#sidebar .query.highlight:not(.active),
+#sidebar .query.mention:not(.active),
+#sidebar .query.mentioned:not(.active),
+#sidebar .query.notification:not(.active),
+#sidebar .query[data-highlight="true"]:not(.active),
+#sidebar .query[data-mention="true"]:not(.active),
+#sidebar .query:not(.active):has(.badge.highlight),
+#sidebar .query:not(.active):has(.badge.mention),
+#sidebar .query:not(.active):has(.badge.mentioned) {
+	background: transparent !important;
+	color: var(--sea-text) !important;
+	font-weight: 600 !important;
+	box-shadow: none !important;
+}
+
+#sidebar .channel-list-item.highlight.active:not(.lobby),
+#sidebar .channel-list-item.mention.active:not(.lobby),
+#sidebar .channel-list-item.mentioned.active:not(.lobby),
+#sidebar .channel-list-item.notification.active:not(.lobby),
+#sidebar .channel-list-item.active[data-highlight="true"]:not(.lobby),
+#sidebar .channel-list-item.active[data-mention="true"]:not(.lobby),
+#sidebar .channel-list-item.active:not(.lobby):has(.badge.highlight),
+#sidebar .channel-list-item.active:not(.lobby):has(.badge.mention),
+#sidebar .channel-list-item.active:not(.lobby):has(.badge.mentioned),
+#sidebar .chan.highlight.active:not(.lobby),
+#sidebar .chan.mention.active:not(.lobby),
+#sidebar .chan.mentioned.active:not(.lobby),
+#sidebar .chan.notification.active:not(.lobby),
+#sidebar .chan.active:not(.lobby):has(.badge.highlight),
+#sidebar .chan.active:not(.lobby):has(.badge.mention),
+#sidebar .chan.active:not(.lobby):has(.badge.mentioned),
+#sidebar .query.highlight.active,
+#sidebar .query.mention.active,
+#sidebar .query.mentioned.active,
+#sidebar .query.notification.active,
+#sidebar .query.active:has(.badge.highlight),
+#sidebar .query.active:has(.badge.mention),
+#sidebar .query.active:has(.badge.mentioned) {
+	background: var(--sea-active-bg) !important;
+	color: var(--sea-text-bright) !important;
+	font-weight: 700 !important;
+	box-shadow: none !important;
+}
+
+#sidebar .channel-list-item.highlight:not(.lobby) .name,
+#sidebar .channel-list-item.mention:not(.lobby) .name,
+#sidebar .channel-list-item.mentioned:not(.lobby) .name,
+#sidebar .channel-list-item.notification:not(.lobby) .name,
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby) .name,
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention) .name,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mentioned) .name,
+#sidebar .chan.highlight:not(.lobby) .name,
+#sidebar .chan.mention:not(.lobby) .name,
+#sidebar .chan.mentioned:not(.lobby) .name,
+#sidebar .chan.notification:not(.lobby) .name,
+#sidebar .chan:not(.lobby):has(.badge.highlight) .name,
+#sidebar .chan:not(.lobby):has(.badge.mention) .name,
+#sidebar .chan:not(.lobby):has(.badge.mentioned) .name,
+#sidebar .query.highlight .name,
+#sidebar .query.mention .name,
+#sidebar .query.mentioned .name,
+#sidebar .query.notification .name,
+#sidebar .query:has(.badge.highlight) .name,
+#sidebar .query:has(.badge.mention) .name,
+#sidebar .query:has(.badge.mentioned) .name {
+	color: inherit !important;
+	font-weight: inherit !important;
+}
+
+#sidebar .channel-list-item:not(.lobby):has(.badge),
+#sidebar .channel-list-item:not(.lobby):has(.unread),
+#sidebar .channel-list-item:not(.lobby):has(.unread-count),
+#sidebar .channel-list-item:not(.lobby):has(.counter),
+#sidebar .chan:not(.lobby):has(.badge),
+#sidebar .chan:not(.lobby):has(.unread),
+#sidebar .chan:not(.lobby):has(.counter),
+#sidebar .query:has(.badge),
+#sidebar .query:has(.unread),
+#sidebar .query:has(.counter) {
+	color: var(--sea-text) !important;
+	font-weight: 600 !important;
+}
+
+#sidebar .channel-list-item.highlight:not(.lobby) .badge,
+#sidebar .channel-list-item.mention:not(.lobby) .badge,
+#sidebar .channel-list-item.mentioned:not(.lobby) .badge,
+#sidebar .channel-list-item.notification:not(.lobby) .badge,
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item[data-mentioned="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mentioned) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="highlight"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="mention"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.unread.highlight) .unread,
+#sidebar .channel-list-item:not(.lobby):has(.unread.mention) .unread,
+#sidebar .channel-list-item:not(.lobby):has(.counter.highlight) .counter,
+#sidebar .channel-list-item:not(.lobby):has(.counter.mention) .counter,
+#sidebar .chan.highlight:not(.lobby) .badge,
+#sidebar .chan.mention:not(.lobby) .badge,
+#sidebar .chan.mentioned:not(.lobby) .badge,
+#sidebar .chan.notification:not(.lobby) .badge,
+#sidebar .chan[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .chan[data-mention="true"]:not(.lobby) .badge,
+#sidebar .chan:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .chan:not(.lobby):has(.badge.mention) .badge,
+#sidebar .chan:not(.lobby):has(.badge.mentioned) .badge,
+#sidebar .query.highlight .badge,
+#sidebar .query.mention .badge,
+#sidebar .query.mentioned .badge,
+#sidebar .query.notification .badge,
+#sidebar .query[data-highlight="true"] .badge,
+#sidebar .query[data-mention="true"] .badge,
+#sidebar .query:has(.badge.highlight) .badge,
+#sidebar .query:has(.badge.mention) .badge,
+#sidebar .query:has(.badge.mentioned) .badge,
+#sidebar .query .badge.highlight,
+#sidebar .query .badge.mention,
+#sidebar .query .badge.mentioned,
+#sidebar .query .badge[data-type="highlight"],
+#sidebar .query .badge[data-type="mention"] {
+	background: var(--sea-ping-dot) !important;
+	box-shadow:
+		0 0 0 2px var(--sea-ping-ring),
+		0 0 12px var(--sea-ping-glow) !important;
+	width: 7px !important;
+	height: 7px !important;
+	min-width: 7px !important;
+	max-width: 7px !important;
+	min-height: 7px !important;
+	max-height: 7px !important;
+}
+
+#sidebar .channel-list-item:not(.lobby) .badge,
+#sidebar .channel-list-item:not(.lobby) .unread,
+#sidebar .channel-list-item:not(.lobby) .unread-count,
+#sidebar .channel-list-item:not(.lobby) .counter,
+#sidebar .chan:not(.lobby) .badge,
+#sidebar .chan:not(.lobby) .unread,
+#sidebar .chan:not(.lobby) .unread-count,
+#sidebar .chan:not(.lobby) .counter,
+#sidebar .query .badge,
+#sidebar .query .unread,
+#sidebar .query .unread-count,
+#sidebar .query .counter {
+	background: var(--sea-unread-dot) !important;
+	box-shadow: none !important;
+	width: 6px !important;
+	height: 6px !important;
+	min-width: 6px !important;
+	max-width: 6px !important;
+	min-height: 6px !important;
+	max-height: 6px !important;
+}
+
+#sidebar .channel-list-item.highlight:not(.lobby) .badge,
+#sidebar .channel-list-item.mention:not(.lobby) .badge,
+#sidebar .channel-list-item.mentioned:not(.lobby) .badge,
+#sidebar .channel-list-item.notification:not(.lobby) .badge,
+#sidebar .channel-list-item[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item[data-mention="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item[data-mentioned="true"]:not(.lobby) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mention) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge.mentioned) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="highlight"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.badge[data-type="mention"]) .badge,
+#sidebar .channel-list-item:not(.lobby):has(.unread.highlight) .unread,
+#sidebar .channel-list-item:not(.lobby):has(.unread.mention) .unread,
+#sidebar .channel-list-item:not(.lobby):has(.counter.highlight) .counter,
+#sidebar .channel-list-item:not(.lobby):has(.counter.mention) .counter,
+#sidebar .chan.highlight:not(.lobby) .badge,
+#sidebar .chan.mention:not(.lobby) .badge,
+#sidebar .chan.mentioned:not(.lobby) .badge,
+#sidebar .chan.notification:not(.lobby) .badge,
+#sidebar .chan[data-highlight="true"]:not(.lobby) .badge,
+#sidebar .chan[data-mention="true"]:not(.lobby) .badge,
+#sidebar .chan:not(.lobby):has(.badge.highlight) .badge,
+#sidebar .chan:not(.lobby):has(.badge.mention) .badge,
+#sidebar .chan:not(.lobby):has(.badge.mentioned) .badge,
+#sidebar .query.highlight .badge,
+#sidebar .query.mention .badge,
+#sidebar .query.mentioned .badge,
+#sidebar .query.notification .badge,
+#sidebar .query[data-highlight="true"] .badge,
+#sidebar .query[data-mention="true"] .badge,
+#sidebar .query:has(.badge.highlight) .badge,
+#sidebar .query:has(.badge.mention) .badge,
+#sidebar .query:has(.badge.mentioned) .badge,
+#sidebar .query .badge.highlight,
+#sidebar .query .badge.mention,
+#sidebar .query .badge.mentioned,
+#sidebar .query .badge[data-type="highlight"],
+#sidebar .query .badge[data-type="mention"] {
+	background: var(--sea-ping-dot) !important;
+	box-shadow: none !important;
+	width: 6px !important;
+	height: 6px !important;
+	min-width: 6px !important;
+	max-width: 6px !important;
+	min-height: 6px !important;
+	max-height: 6px !important;
+}
+
+#chat .window.query .msg.highlight,
+#chat .window.query .msg.mentioned,
+#chat .window.query .msg[data-highlight="true"],
+#chat .window.query .msg[data-type="highlight"],
+#windows .window.query .msg.highlight,
+#windows .window.query .msg.mentioned,
+#windows .window.query .msg[data-highlight="true"],
+#windows .window.query .msg[data-type="highlight"],
+#chat .query .msg.highlight,
+#chat .query .msg.mentioned,
+#chat .query .msg[data-highlight="true"],
+#chat .query .msg[data-type="highlight"],
+#windows .query .msg.highlight,
+#windows .query .msg.mentioned,
+#windows .query .msg[data-highlight="true"],
+#windows .query .msg[data-type="highlight"],
+#chat [data-type="query"] .msg.highlight,
+#chat [data-type="query"] .msg.mentioned,
+#chat [data-type="query"] .msg[data-highlight="true"],
+#chat [data-type="query"] .msg[data-type="highlight"],
+#windows [data-type="query"] .msg.highlight,
+#windows [data-type="query"] .msg.mentioned,
+#windows [data-type="query"] .msg[data-highlight="true"],
+#windows [data-type="query"] .msg[data-type="highlight"],
+#chat .window:not(:has(.userlist)):not(.chan) .msg.highlight,
+#chat .window:not(:has(.userlist)):not(.chan) .msg.mentioned,
+#chat .window:not(:has(.userlist)):not(.chan) .msg[data-highlight="true"],
+#chat .window:not(:has(.userlist)):not(.chan) .msg[data-type="highlight"],
+#windows .window:not(:has(.userlist)):not(.chan) .msg.highlight,
+#windows .window:not(:has(.userlist)):not(.chan) .msg.mentioned,
+#windows .window:not(:has(.userlist)):not(.chan) .msg[data-highlight="true"],
+#windows .window:not(:has(.userlist)):not(.chan) .msg[data-type="highlight"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border: none !important;
+}
+
+#chat .window.query .msg.highlight .content,
+#chat .window.query .msg.mentioned .content,
+#chat .window.query .msg[data-highlight="true"] .content,
+#chat .window.query .msg[data-type="highlight"] .content,
+#windows .window.query .msg.highlight .content,
+#windows .window.query .msg.mentioned .content,
+#windows .window.query .msg[data-highlight="true"] .content,
+#windows .window.query .msg[data-type="highlight"] .content,
+#chat .query .msg.highlight .content,
+#chat .query .msg.mentioned .content,
+#chat .query .msg[data-highlight="true"] .content,
+#chat .query .msg[data-type="highlight"] .content,
+#windows .query .msg.highlight .content,
+#windows .query .msg.mentioned .content,
+#windows .query .msg[data-highlight="true"] .content,
+#windows .query .msg[data-type="highlight"] .content,
+#chat [data-type="query"] .msg.highlight .content,
+#chat [data-type="query"] .msg.mentioned .content,
+#chat [data-type="query"] .msg[data-highlight="true"] .content,
+#chat [data-type="query"] .msg[data-type="highlight"] .content,
+#windows [data-type="query"] .msg.highlight .content,
+#windows [data-type="query"] .msg.mentioned .content,
+#windows [data-type="query"] .msg[data-highlight="true"] .content,
+#windows [data-type="query"] .msg[data-type="highlight"] .content,
+#chat .window:not(:has(.userlist)):not(.chan) .msg.highlight .content,
+#chat .window:not(:has(.userlist)):not(.chan) .msg.mentioned .content,
+#chat .window:not(:has(.userlist)):not(.chan) .msg[data-highlight="true"] .content,
+#chat .window:not(:has(.userlist)):not(.chan) .msg[data-type="highlight"] .content,
+#windows .window:not(:has(.userlist)):not(.chan) .msg.highlight .content,
+#windows .window:not(:has(.userlist)):not(.chan) .msg.mentioned .content,
+#windows .window:not(:has(.userlist)):not(.chan) .msg[data-highlight="true"] .content,
+#windows .window:not(:has(.userlist)):not(.chan) .msg[data-type="highlight"] .content {
+  color: var(--sea-text) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
