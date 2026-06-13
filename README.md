@@ -1,6 +1,8 @@
 # ChatPotion
 
-**ChatPotion** is a polished theme collection for [The Lounge](https://thelounge.chat/), focused on clean dark UI, readable chat layouts, improved mention indicators, and Halloy-inspired sidebar styling.
+**ChatPotion** is a polished collection of 21 themes for [The Lounge](https://thelounge.chat/), focused on clean dark interfaces, readable chat layouts, distinct unread and mention indicators, and a compact Halloy-inspired sidebar.
+
+All 21 ChatPotion themes are published on npm and can be installed directly through The Lounge. Browse the complete collection on the [ggvolta npm profile](https://www.npmjs.com/~ggvolta).
 
 ## Preview
 
@@ -45,6 +47,82 @@
 
 </details>
 
+## Features
+
+- 21 custom themes for The Lounge
+- Installable npm packages for every theme
+- Morning base CSS bundled into installable packages
+- Halloy-inspired compact sidebar
+- Accordion Stack control for expanding and collapsing networks
+- Improved unread message dots
+- Separate mention and ping indicators
+- Themed recent-mentions panel
+- Improved context-menu readability
+- Fixed private-message highlight behavior
+- Better image-preview overlay styling
+- Responsive layout adjustments
+
+## npm Packages
+
+All 21 ChatPotion themes are available on npm under **ggvolta**:
+
+- **npm profile:** [https://www.npmjs.com/~ggvolta](https://www.npmjs.com/~ggvolta)
+- **Package naming:** `thelounge-theme-chatpotion-*`
+
+## Installation
+
+### Installable Theme Package — Recommended
+
+Install any theme directly with The Lounge:
+
+```sh
+thelounge install thelounge-theme-chatpotion-deep-sea-cyan
+```
+
+Restart The Lounge, open **Settings → Appearance**, and select the installed ChatPotion theme.
+
+The installable packages already include the **Morning** base CSS, so you do not need to select Morning separately.
+
+<details>
+<summary>Show install commands for all themes</summary>
+
+<br>
+
+| Theme | Command |
+|---|---|
+| Arctic Aurora | `thelounge install thelounge-theme-chatpotion-arctic-aurora` |
+| Ayu Mirage | `thelounge install thelounge-theme-chatpotion-ayu-mirage` |
+| Catppuccin Mocha | `thelounge install thelounge-theme-chatpotion-catppuccin-mocha` |
+| Crimson Noir | `thelounge install thelounge-theme-chatpotion-crimson-noir` |
+| Cyberpunk Neon | `thelounge install thelounge-theme-chatpotion-cyberpunk-neon` |
+| Deep Sea Cyan | `thelounge install thelounge-theme-chatpotion-deep-sea-cyan` |
+| Dracula Soft | `thelounge install thelounge-theme-chatpotion-dracula-soft` |
+| Everforest Dark | `thelounge install thelounge-theme-chatpotion-everforest-dark` |
+| Forest Night | `thelounge install thelounge-theme-chatpotion-forest-night` |
+| GitHub Dark | `thelounge install thelounge-theme-chatpotion-github-dark` |
+| Gruvbox Material | `thelounge install thelounge-theme-chatpotion-gruvbox-material` |
+| Kanagawa Wave | `thelounge install thelounge-theme-chatpotion-kanagawa-wave` |
+| Matrix Terminal | `thelounge install thelounge-theme-chatpotion-matrix-terminal` |
+| Midnight Sapphire | `thelounge install thelounge-theme-chatpotion-midnight-sapphire` |
+| Monokai Pro | `thelounge install thelounge-theme-chatpotion-monokai-pro` |
+| Nord Frost | `thelounge install thelounge-theme-chatpotion-nord-frost` |
+| One Dark Pro | `thelounge install thelounge-theme-chatpotion-one-dark-pro` |
+| Rosé Pine Moon | `thelounge install thelounge-theme-chatpotion-rose-pine-moon` |
+| Solarized Night | `thelounge install thelounge-theme-chatpotion-solarized-night` |
+| Synthwave Sunset | `thelounge install thelounge-theme-chatpotion-synthwave-sunset` |
+| Tokyo Night | `thelounge install thelounge-theme-chatpotion-tokyo-night` |
+
+</details>
+
+### Custom Stylesheet
+
+1. Open The Lounge.
+2. Go to **Settings → Appearance**.
+3. Select **Morning** as the base theme.
+4. Copy the CSS from a file inside the `themes` folder.
+5. Paste it into **Custom Stylesheet**.
+6. Save and refresh The Lounge.
+
 ## Themes Included
 
 - Arctic Aurora
@@ -69,64 +147,57 @@
 - Synthwave Sunset
 - Tokyo Night
 
-## Features
-
-- 21 custom themes for The Lounge
-- Clean dark interface styling
-- Halloy-inspired sidebar appearance
-- Improved unread message dots
-- Separate mention/ping indicators
-- Themed recent mentions panel
-- Improved context menu readability
-- Fixed private message highlight behavior
-- Better image preview overlay styling
-- Responsive layout adjustments
-
-## Installation
-
-1. Open The Lounge.
-2. Go to **Settings**.
-3. Set the base theme to **Morning** for the best result.
-4. Open **Custom Stylesheet**.
-5. Copy the CSS from any file inside the `themes` folder.
-6. Paste it into the custom stylesheet box.
-7. Save and refresh The Lounge.
-
-## Recommended Base Theme
-
-ChatPotion works best when applied over The Lounge's **Morning** theme.
-
-AMOLED-based setups may also work well, but AMOLED is not a default The Lounge theme.
-
 ## Support
 
 ChatPotion is free and open source. If you like the project and want to support future updates, you can donate here:
 
-* **Bitcoin:** `152t9E459z3o2C7Nt5ZsFCgfV6YcKtEph8`
-* **Ethereum:** `0xf5e3dc3f7b421f66fd53b83a1e24dfe0f3b06103`
-* **Solana:** `DwkYxTJ33QUzuuDP4GLJNSzLWD3wUHjiCyiW4ztzYcwW`
-* **Dogecoin:** `DRyszSw99c7z82nfZBjrCgdPmc5QGymC74`
-* **Litecoin:** `LQLoyKQuyd2gCGrNn6FLfVjjHuUz5oPXnm`
+- **Bitcoin:** `152t9E459z3o2C7Nt5ZsFCgfV6YcKtEph8`
+- **Ethereum:** `0xf5e3dc3f7b421f66fd53b83a1e24dfe0f3b06103`
+- **Solana:** `DwkYxTJ33QUzuuDP4GLJNSzLWD3wUHjiCyiW4ztzYcwW`
+- **Dogecoin:** `DRyszSw99c7z82nfZBjrCgdPmc5QGymC74`
+- **Litecoin:** `LQLoyKQuyd2gCGrNn6FLfVjjHuUz5oPXnm`
 
 Please double-check the address and network before sending. Crypto transactions cannot be reversed.
 
-If you would like to be added to the supporters list, you can contact me at `acidvoltax@proton.me`.
+If you would like to be added to the supporters list, contact `acidvoltax@proton.me`.
 
-## Folder Structure
+## Project Structure
 
 ```text
 ChatPotion
-├── themes
+├── base
+│   └── morning.css
+├── packages
+│   └── thelounge-theme-chatpotion-*
 ├── screenshots
-├── README.md
-├── LICENSE
+├── scripts
+│   └── generate-packages.js
+├── themes
 ├── CHANGELOG.md
-└── .gitignore
+├── LICENSE
+├── package.json
+└── README.md
+```
+
+## Development
+
+After editing files in `themes`, regenerate every installable package from the project root:
+
+```sh
+npm run generate:packages
+```
+
+Before publishing a package, inspect its contents:
+
+```sh
+npm pack --dry-run
 ```
 
 ## Notes
 
-These themes are designed for The Lounge’s custom stylesheet feature. They are not official The Lounge themes or plugins.
+- The files in `themes` are intended for The Lounge's Custom Stylesheet feature.
+- The folders in `packages` are complete installable The Lounge theme packages.
+- ChatPotion is an independent project and is not an official The Lounge theme collection or plugin.
 
 ## Author
 

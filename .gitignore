@@ -4,3 +4,5 @@ Thumbs.db
 node_modules/
 .env
 .vscode/
+*.tgz
+npm-debug.log*

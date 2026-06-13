@@ -2,29 +2,39 @@
 
 Catppuccin Mocha theme from **ChatPotion** for [The Lounge](https://thelounge.chat/) IRC client.
 
+![Catppuccin Mocha preview](https://raw.githubusercontent.com/ggvolta/ChatPotion/main/screenshots/catppuccin-mocha.png)
+
 ## Installation
 
-Install this theme with The Lounge:
+Install the theme with The Lounge:
 
 ```sh
 thelounge install thelounge-theme-chatpotion-catppuccin-mocha
 ```
 
-Then open The Lounge settings and select:
+Restart The Lounge, open **Settings → Appearance**, and select:
 
 ```text
 ChatPotion Catppuccin Mocha
 ```
 
-## Recommended Base Theme
+The **Morning** base CSS is bundled into this package, so no separate base-theme selection is required.
 
-This theme works best when used with The Lounge's **Morning** base theme.
+## Features
+
+- Clean dark interface with a theme-specific color palette
+- Halloy-inspired compact sidebar
+- Separate unread and mention indicators
+- Accordion Stack control for expanding and collapsing networks
+- Improved recent-mentions panel and context-menu readability
+- Responsive layout adjustments
 
 ## ChatPotion
 
-This package is part of the full ChatPotion theme collection:
+This package is part of the complete ChatPotion collection. All 21 themes are published on npm:
 
-https://github.com/ggvolta/ChatPotion
+- GitHub: https://github.com/ggvolta/ChatPotion
+- npm profile: https://www.npmjs.com/~ggvolta
 
 ## Support
 
@@ -38,7 +48,7 @@ ChatPotion is free and open source. If you like the project and want to support 
 
 Please double-check the address and network before sending. Crypto transactions cannot be reversed.
 
-If you would like to be added to the supporters list, you can contact me at `acidvoltax@proton.me`.
+If you would like to be added to the supporters list, contact `acidvoltax@proton.me`.
 
 
 ## License

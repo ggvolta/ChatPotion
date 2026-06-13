@@ -182,8 +182,7 @@ kbd {
 
 /* End form elements */
 
-
-  /* =========================================================
+/* =========================================================
 Tokyo Night Theme for The Lounge
 By ggvolta
 ========================================================= */
@@ -444,30 +443,304 @@ body {
 	position: relative !important;
 }
 
-#sidebar .network > .collapse-network,
-#sidebar .network .collapse-network,
-#sidebar .network-name .collapse-network,
-#sidebar .network-name .collapse-network::before,
-#sidebar .network-name .collapse-network::after,
-#sidebar .network-name .collapse-network svg,
-#sidebar .network-name .collapse-network i {
+#sidebar .network > .channel-list-item[data-type="lobby"] {
+	position: relative !important;
+	display: flex !important;
+	align-items: center !important;
+
+	height: 29px !important;
+	min-height: 29px !important;
+
+	margin: 1px 8px !important;
+	padding: 0 !important;
+
+	width: calc(100% - 16px) !important;
+	max-width: calc(100% - 16px) !important;
+	box-sizing: border-box !important;
+
+	border-radius: 5px !important;
+	overflow: visible !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > .lobby-wrap {
+	position: relative !important;
+
+	display: flex !important;
+	align-items: center !important;
+	flex: 1 1 auto !important;
+
+	width: 100% !important;
+	min-width: 0 !important;
+	height: 29px !important;
+
+	margin: 0 !important;
+	padding: 5px 62px 5px 28px !important;
+	box-sizing: border-box !important;
+
+	color: var(--sea-text-strong) !important;
+
+	font-size: 12px !important;
+	line-height: 19px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.01em !important;
+
+	overflow: hidden !important;
+	white-space: nowrap !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > .lobby-wrap > .name {
+	display: block !important;
+	flex: 1 1 auto !important;
+	min-width: 0 !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: inherit !important;
+
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > .add-channel-tooltip {
+	position: absolute !important;
+	right: 31px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+
+	width: 22px !important;
+	min-width: 22px !important;
+	max-width: 22px !important;
+
+	height: 24px !important;
+	min-height: 24px !important;
+	max-height: 24px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	z-index: 70 !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > .add-channel-tooltip > button.add-channel {
+	position: relative !important;
+	right: auto !important;
+	top: auto !important;
+	transform: none !important;
+
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+
+	width: 22px !important;
+	min-width: 22px !important;
+	max-width: 22px !important;
+
+	height: 24px !important;
+	min-height: 24px !important;
+	max-height: 24px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: var(--sea-muted) !important;
+	background: transparent !important;
+	border: 1px solid transparent !important;
+	border-radius: 5px !important;
+
+	opacity: 0.88 !important;
+	cursor: pointer !important;
+
+	transition:
+		color 150ms ease,
+		background-color 150ms ease,
+		border-color 150ms ease,
+		opacity 150ms ease !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > .add-channel-tooltip > button.add-channel:hover,
+#sidebar .network > .channel-list-item[data-type="lobby"] > .add-channel-tooltip > button.add-channel:focus-visible {
+	color: var(--sea-accent) !important;
+	background: var(--sea-hover-bg) !important;
+	border-color: var(--sea-border-soft) !important;
+	opacity: 1 !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network {
+	-webkit-appearance: none !important;
+	appearance: none !important;
+
+	position: absolute !important;
+	right: 5px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+
+	width: 22px !important;
+	min-width: 22px !important;
+	max-width: 22px !important;
+
+	height: 24px !important;
+	min-height: 24px !important;
+	max-height: 24px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: var(--sea-dim) !important;
+	background: transparent !important;
+	border: 1px solid transparent !important;
+	border-radius: 5px !important;
+
+	opacity: 0.88 !important;
+	visibility: visible !important;
+	overflow: hidden !important;
+	pointer-events: auto !important;
+	cursor: pointer !important;
+
+	z-index: 80 !important;
+
+	transition:
+		color 150ms ease,
+		background-color 150ms ease,
+		border-color 150ms ease,
+		opacity 150ms ease !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network::before,
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network::after {
+	content: none !important;
 	display: none !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network > .collapse-network-icon {
+	position: relative !important;
+
+	display: block !important;
+	visibility: visible !important;
+
+	width: 14px !important;
+	min-width: 14px !important;
+	max-width: 14px !important;
+
+	height: 12px !important;
+	min-height: 12px !important;
+	max-height: 12px !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+
+	color: inherit !important;
+
+	background:
+		linear-gradient(currentColor, currentColor)
+		center / 10px 1.5px no-repeat !important;
+
+	border: none !important;
+	box-shadow: none !important;
+
+	font-size: 0 !important;
+	line-height: 0 !important;
+
+	transform: none !important;
+
+	transition:
+		background-size 180ms ease,
+		color 150ms ease !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network > .collapse-network-icon::before,
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network > .collapse-network-icon::after {
+	content: "" !important;
+
+	position: absolute !important;
+	left: 50% !important;
+
+	display: block !important;
+
+	height: 1.5px !important;
+
+	background: currentColor !important;
+	border-radius: 999px !important;
+
+	opacity: 1 !important;
+	transform: translateX(-50%) !important;
+	transform-origin: center !important;
+
+	transition:
+		width 180ms ease,
+		opacity 180ms ease !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network > .collapse-network-icon::before {
+	top: 1px !important;
+	width: 7px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network > .collapse-network-icon::after {
+	bottom: 1px !important;
+	width: 13px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network:hover,
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network:focus-visible {
+	color: var(--sea-accent) !important;
+	background: var(--sea-hover-bg) !important;
+	border-color: var(--sea-border-soft) !important;
+	opacity: 1 !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network:focus-visible {
+	outline: 1px solid var(--sea-focus-outline) !important;
+	outline-offset: 1px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network[aria-expanded="false"] {
+	color: var(--sea-accent) !important;
+	opacity: 1 !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network[aria-expanded="false"] > .collapse-network-icon::before {
+	width: 13px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > button.collapse-network[aria-expanded="false"] > .collapse-network-icon::after {
+	width: 7px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"] > span.collapse-network {
+	position: absolute !important;
+	right: 5px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	display: block !important;
 	visibility: hidden !important;
 
-	width: 0 !important;
-	min-width: 0 !important;
-	max-width: 0 !important;
-
-	height: 0 !important;
-	min-height: 0 !important;
-	max-height: 0 !important;
+	width: 22px !important;
+	height: 24px !important;
 
 	margin: 0 !important;
 	padding: 0 !important;
 
 	opacity: 0 !important;
-	overflow: hidden !important;
 	pointer-events: none !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"]:has(> span.collapse-network) > .lobby-wrap {
+	padding-right: 36px !important;
+}
+
+#sidebar .network > .channel-list-item[data-type="lobby"]:has(> span.collapse-network) > .add-channel-tooltip {
+	right: 5px !important;
 }
 
 
@@ -1466,3 +1739,4 @@ body {
   box-shadow: none !important;
   text-shadow: none !important;
 }
+

@@ -1,6 +1,6 @@
 {
   "name": "thelounge-theme-chatpotion-arctic-aurora",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Arctic Aurora theme from ChatPotion for The Lounge IRC client.",
   "main": "package.json",
   "keywords": [
@@ -28,6 +28,9 @@
   },
   "author": "ggvolta",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "theme.css",
     "README.md",

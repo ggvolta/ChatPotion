@@ -6,6 +6,7 @@ const themesDir = path.join(rootDir, "themes");
 const packagesDir = path.join(rootDir, "packages");
 const licensePath = path.join(rootDir, "LICENSE");
 const morningPath = path.join(rootDir, "base", "morning.css");
+const packageVersion = "1.0.2";
 
 const cryptoSupport = `## Support
 
@@ -19,7 +20,7 @@ ChatPotion is free and open source. If you like the project and want to support 
 
 Please double-check the address and network before sending. Crypto transactions cannot be reversed.
 
-If you would like to be added to the supporters list, you can contact me at \`acidvoltax@proton.me\`.
+If you would like to be added to the supporters list, contact \`acidvoltax@proton.me\`.
 `;
 
 const themes = [
@@ -61,7 +62,7 @@ if (!fs.existsSync(morningPath)) {
 fs.mkdirSync(packagesDir, { recursive: true });
 
 const licenseText = fs.readFileSync(licensePath, "utf8");
-const morningCss = fs.readFileSync(morningPath, "utf8");
+const morningCss = fs.readFileSync(morningPath, "utf8").trimEnd();
 
 for (const [fileName, displayName] of themes) {
   const slug = fileName.replace(".css", "");
@@ -75,18 +76,15 @@ for (const [fileName, displayName] of themes) {
 
   fs.mkdirSync(packageDir, { recursive: true });
 
-  const css = fs.readFileSync(sourceCss, "utf8");
-
-  const fullThemeCss = `${morningCss}
-
-  ${css}`;
+  const css = fs.readFileSync(sourceCss, "utf8").trimStart();
+  const fullThemeCss = `${morningCss}\n\n${css}\n`;
 
   fs.writeFileSync(path.join(packageDir, "theme.css"), fullThemeCss, "utf8");
   fs.writeFileSync(path.join(packageDir, "LICENSE"), licenseText, "utf8");
 
   const packageJson = {
     name: packageName,
-    version: "1.0.1",
+    version: packageVersion,
     description: `${displayName} theme from ChatPotion for The Lounge IRC client.`,
     main: "package.json",
     keywords: [
@@ -114,6 +112,9 @@ for (const [fileName, displayName] of themes) {
     },
     author: "ggvolta",
     license: "MIT",
+    publishConfig: {
+      access: "public"
+    },
     files: [
       "theme.css",
       "README.md",
@@ -131,29 +132,39 @@ for (const [fileName, displayName] of themes) {
 
 ${displayName} theme from **ChatPotion** for [The Lounge](https://thelounge.chat/) IRC client.
 
+![${displayName} preview](https://raw.githubusercontent.com/ggvolta/ChatPotion/main/screenshots/${slug}.png)
+
 ## Installation
 
-Install this theme with The Lounge:
+Install the theme with The Lounge:
 
 \`\`\`sh
 thelounge install ${packageName}
 \`\`\`
 
-Then open The Lounge settings and select:
+Restart The Lounge, open **Settings → Appearance**, and select:
 
 \`\`\`text
 ${packageJson.thelounge.name}
 \`\`\`
 
-## Recommended Base Theme
+The **Morning** base CSS is bundled into this package, so no separate base-theme selection is required.
 
-This theme works best when used with The Lounge's **Morning** base theme.
+## Features
+
+- Clean dark interface with a theme-specific color palette
+- Halloy-inspired compact sidebar
+- Separate unread and mention indicators
+- Accordion Stack control for expanding and collapsing networks
+- Improved recent-mentions panel and context-menu readability
+- Responsive layout adjustments
 
 ## ChatPotion
 
-This package is part of the full ChatPotion theme collection:
+This package is part of the complete ChatPotion collection. All 21 themes are published on npm:
 
-https://github.com/ggvolta/ChatPotion
+- GitHub: https://github.com/ggvolta/ChatPotion
+- npm profile: https://www.npmjs.com/~ggvolta
 
 ${cryptoSupport}
 
@@ -164,7 +175,7 @@ MIT License.
 
   fs.writeFileSync(path.join(packageDir, "README.md"), readme, "utf8");
 
-  console.log(`Created ${packageName}`);
+  console.log(`Created ${packageName}@${packageVersion}`);
 }
 
 console.log("All ChatPotion theme packages generated successfully.");
