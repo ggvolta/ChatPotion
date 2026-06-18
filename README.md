@@ -6,15 +6,6 @@
   A polished collection of 21 themes for
   <a href="https://thelounge.chat/">The Lounge IRC client</a>.
 </p>
-````markdown
-<p align="center">
-  <img src="./assets/chatpotion-wordmark.svg" alt="ChatPotion" width="420">
-</p>
-
-<p align="center">
-  A polished collection of 21 themes for
-  <a href="https://thelounge.chat/">The Lounge IRC client</a>.
-</p>
 
 <p align="center">
   <a href="https://github.com/ggvolta/ChatPotion/releases/latest">Latest Release</a>
