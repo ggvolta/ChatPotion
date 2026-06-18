@@ -283,28 +283,6 @@ Before publishing a package, inspect its contents:
 npm pack --dry-run
 ```
 
-### Updating the Installer
-
-When the installer is changed, update its version before publishing again:
-
-```bash
-cd packages/chatpotion-installer
-npm version patch
-npm publish
-```
-
-For example:
-
-```text
-1.0.0 → 1.0.1
-```
-
-The latest installer can always be run with:
-
-```bash
-npx --yes chatpotion-installer@latest --accept
-```
-
 ## Notes
 
 * The files inside `themes` are intended for The Lounge's Custom Stylesheet feature.
