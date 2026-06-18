@@ -1,14 +1,25 @@
-# ChatPotion
+<p align="center">
+  <img src="assets/chatpotion-logo.svg" alt="ChatPotion" width="420">
+</p>
 
-**ChatPotion** is a polished collection of 21 themes for [The Lounge](https://thelounge.chat/), focused on clean dark interfaces, readable chat layouts, distinct unread and mention indicators, and a compact Halloy-inspired sidebar.
+<p align="center">
+  A polished collection of 21 themes for
+  <a href="https://thelounge.chat/">The Lounge IRC client</a>.
+</p>
 
-All 21 ChatPotion themes are published on npm and can be installed individually through The Lounge or together using the ChatPotion all-theme installer.
+<p align="center">
+  <a href="https://github.com/ggvolta/ChatPotion/releases/latest">Latest Release</a>
+  •
+  <a href="https://www.npmjs.com/package/chatpotion-installer">All-Theme Installer</a>
+  •
+  <a href="https://www.npmjs.com/~ggvolta">npm Profile</a>
+  •
+  <a href="https://github.com/ggvolta/ChatPotion/issues">Issues</a>
+</p>
 
-ChatPotion is designed to be usable on both **desktop and mobile** layouts.
+**ChatPotion** focuses on clean dark interfaces, readable chat layouts, distinct unread and mention indicators, responsive styling, and a compact Halloy-inspired sidebar.
 
-* [GitHub Repository](https://github.com/ggvolta/ChatPotion)
-* [ChatPotion Installer](https://www.npmjs.com/package/chatpotion-installer)
-* [ggvolta npm Profile](https://www.npmjs.com/~ggvolta)
+All 21 themes are published on npm. You can install one theme individually or install the complete collection with a single command.
 
 ## Preview
 
@@ -58,25 +69,21 @@ ChatPotion is designed to be usable on both **desktop and mobile** layouts.
 * 21 custom themes for The Lounge
 * Installable npm package for every theme
 * One-command installer for the complete collection
-* Usable on desktop and mobile layouts
-* Morning base CSS bundled into installable theme packages
+* Morning base CSS bundled into installable packages
 * Halloy-inspired compact sidebar
-* Adjustable sidebar width
 * Accordion Stack control for expanding and collapsing networks
 * Improved unread message dots
 * Separate mention and ping indicators
 * Themed recent-mentions panel
-* Improved nickname colors and readability
-* Cleaner message spacing and typography
 * Improved context-menu readability
 * Fixed private-message highlight behavior
 * Better image-preview overlay styling
-* Responsive layout adjustments
+* Responsive desktop and mobile layouts
 * Free and open source
 
 ## npm Packages
 
-All 21 individual ChatPotion themes are available on npm under **ggvolta**.
+All individual ChatPotion themes are published on npm under **ggvolta**.
 
 * **npm profile:** https://www.npmjs.com/~ggvolta
 * **Theme package naming:** `thelounge-theme-chatpotion-*`
@@ -92,7 +99,7 @@ Install the complete ChatPotion collection with one command:
 npx chatpotion-installer
 ```
 
-The installer will display all included themes and ask for confirmation before installation.
+The installer displays all included themes and asks for confirmation before installation.
 
 To skip the confirmation prompt:
 
@@ -108,7 +115,7 @@ After installation, restart The Lounge and open:
 Settings → Appearance
 ```
 
-All 21 themes will remain individually selectable inside The Lounge.
+All 21 themes remain individually selectable inside The Lounge.
 
 ### Debian and Ubuntu `.deb` Installations
 
@@ -130,9 +137,9 @@ Then open:
 Settings → Appearance
 ```
 
-### Preview the Installer Without Installing
+### Preview Without Installing
 
-To display all included packages without installing anything:
+Display all included theme packages without installing anything:
 
 ```bash
 npx chatpotion-installer --dry-run
@@ -239,7 +246,7 @@ ChatPotion is free and open source. If you like the project and want to support 
 
 Please double-check the address and network before sending. Cryptocurrency transactions cannot be reversed.
 
-If you would like to be added to the supporters list, contact:
+To be added to the supporters list, contact:
 
 ```text
 acidvoltax@proton.me
@@ -249,6 +256,8 @@ acidvoltax@proton.me
 
 ```text
 ChatPotion
+├── assets
+│   └── chatpotion-logo.svg
 ├── base
 │   └── morning.css
 ├── packages
@@ -286,15 +295,15 @@ npm pack --dry-run
 ## Notes
 
 * The files inside `themes` are intended for The Lounge's Custom Stylesheet feature.
-* The folders named `thelounge-theme-chatpotion-*` inside `packages` are complete installable The Lounge theme packages.
+* The `thelounge-theme-chatpotion-*` folders inside `packages` are complete installable theme packages.
 * The `chatpotion-installer` package installs all 21 individual theme packages.
 * Every installed theme remains separately selectable in **Settings → Appearance**.
-* ChatPotion is designed for desktop and mobile layouts.
+* ChatPotion supports desktop and mobile layouts.
 * ChatPotion is an independent project and is not an official The Lounge theme collection or plugin.
 
 ## Feedback
 
-Bug reports, theme suggestions and interface feedback are welcome.
+Bug reports, theme suggestions, and interface feedback are welcome.
 
 * [Open an issue](https://github.com/ggvolta/ChatPotion/issues)
 * [View the latest release](https://github.com/ggvolta/ChatPotion/releases/latest)
